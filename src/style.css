@@ -26,6 +26,57 @@ main.calculator-panel {
   justify-content: flex-end;
 }
 
+.calc-header {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.calc-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: #888888;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding-bottom: 4px;
+}
+
+.nav-btn.active {
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+.display-area {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.previous-equation {
+  color: #888888;
+  font-size: 13px;
+  margin-bottom: 4px;
+  height: 20px;
+}
+
+.current-result {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
 .display-area {
   width: 100%;
   text-align: right;
