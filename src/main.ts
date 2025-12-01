@@ -1,4 +1,5 @@
 const display = document.getElementById('display-main') as HTMLOutputElement;
+const historyList = document.getElementById('history-list');
 const buttons = document.querySelectorAll('.btn');
 
 let input = '0';
@@ -31,10 +32,24 @@ function calculate(expr: string): string {
     const next = parseFloat(parts[i + 1]);
     if (isNaN(next)) return 'Error';
 
-    result = operate(result, operator, next);
+    result = operate(result, op, next);
   }
 
   return result.toString();
+}
+
+function addToHistory(expression: string, result: string) {
+  if (!historyList || result === 'Error') return;
+
+  const item = document.createElement('li');
+  item.className = 'hist-item';
+
+  item.innerHTML = `
+    <span class="hist-eq">${expression} =</span>
+    <span class="hist-res">${result}</span>
+  `;
+
+  historyList.prepend(item);
 }
 
 buttons.forEach((btn) => {
@@ -47,7 +62,11 @@ buttons.forEach((btn) => {
     } else if (value === 'DEL') {
       input = input.length > 1 ? input.slice(0, -1) : '0';
     } else if (value === '=') {
-      input = calculate(input);
+      const oldInput = input;
+      const result = calculate(input);
+
+      addToHistory(oldInput, result);
+      input = result;
     } else {
       const ops = ['+', '-', '×', '÷'];
       if (input === '0' && !ops.includes(value)) {

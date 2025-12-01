@@ -14,16 +14,24 @@ body {
   overflow: hidden;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #000000;
+  border-radius: 12px;
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
 main.calculator-panel {
   width: 600px;
   height: 550px;
-  background-color: #000000;
-  border-radius: 12px;
   padding: 30px;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
   justify-content: flex-end;
+  border-right: 1px solid #1f1f1f;
 }
 
 .calc-header {
@@ -66,6 +74,7 @@ main.calculator-panel {
   font-size: 13px;
   margin-bottom: 4px;
   height: 20px;
+  display: block;
 }
 
 .current-result {
@@ -75,32 +84,7 @@ main.calculator-panel {
   letter-spacing: -1px;
   word-wrap: break-word;
   word-break: break-all;
-}
-
-.display-area {
-  width: 100%;
-  text-align: right;
-  margin-bottom: 15px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.previous-equation {
-  color: #888888;
-  font-size: 13px;
-  margin-bottom: 4px;
-  height: 20px;
-}
-
-.current-result {
-  color: #ffffff;
-  font-size: 48px;
-  font-weight: 300;
-  letter-spacing: -1px;
-  word-wrap: break-word;
-  word-break: break-all;
+  display: block;
 }
 
 .keypad-grid {
@@ -152,4 +136,62 @@ main.calculator-panel {
 
 .btn-red {
   background-color: #3d0000;
+}
+
+aside.history-panel {
+  width: 320px;
+  height: 550px;
+  padding: 30px;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid transparent;
+}
+
+.history-title {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid white;
+}
+
+.history-list {
+  list-style: none;
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.history-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+.hist-item {
+  text-align: right;
+  opacity: 0.7;
+}
+
+.hist-eq {
+  display: block;
+  color: #888888;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.hist-res {
+  display: block;
+  color: #ffffff;
+  font-size: 18px;
 }

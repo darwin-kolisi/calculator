@@ -7,63 +7,72 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="calculator-panel">
-      <header class="calc-header">
-        <nav class="calc-nav">
-          <button class="nav-btn">Standard</button>
-          <button class="nav-btn active">Scientific</button>
-        </nav>
-      </header>
+    <section class="app-container">
+      <main class="calculator-panel">
+        <header class="calc-header">
+          <nav class="calc-nav">
+            <button class="nav-btn">Standard</button>
+            <button class="nav-btn active">Scientific</button>
+          </nav>
+        </header>
 
-      <section class="display-area">
-        <output class="previous-equation" id="display-history"></output>
-        <output class="current-result" id="display-main">0</output>
-      </section>
+        <section class="display-area">
+          <output class="previous-equation" id="display-history"></output>
+          <output class="current-result" id="display-main">0</output>
+        </section>
 
-      <section class="keypad-grid">
-        <button class="btn btn-top-func">SHIFT</button>
-        <button class="btn btn-top-func">ALPHA</button>
-        <button class="btn btn-func">(</button>
-        <button class="btn btn-func">)</button>
-        <button class="btn btn-top-func">ON</button>
+        <section class="keypad-grid">
+          <button class="btn btn-top-func">SHIFT</button>
+          <button class="btn btn-top-func">ALPHA</button>
+          <button class="btn btn-func">(</button>
+          <button class="btn btn-func">)</button>
+          <button class="btn btn-top-func">ON</button>
 
-        <button class="btn btn-func">sin</button>
-        <button class="btn btn-func">cos</button>
-        <button class="btn btn-func">tan</button>
-        <button class="btn btn-func">log</button>
-        <button class="btn btn-func">ln</button>
+          <button class="btn btn-func">sin</button>
+          <button class="btn btn-func">cos</button>
+          <button class="btn btn-func">tan</button>
+          <button class="btn btn-func">log</button>
+          <button class="btn btn-func">ln</button>
 
-        <button class="btn btn-func">x²</button>
-        <button class="btn btn-func">√</button>
-        <button class="btn btn-func">xⁿ</button>
-        <button class="btn btn-func">π</button>
-        <button class="btn btn-func">e</button>
+          <button class="btn btn-func">x²</button>
+          <button class="btn btn-func">√</button>
+          <button class="btn btn-func">xⁿ</button>
+          <button class="btn btn-func">π</button>
+          <button class="btn btn-func">e</button>
 
-        <button class="btn btn-num">7</button>
-        <button class="btn btn-num">8</button>
-        <button class="btn btn-num">9</button>
-        <button class="btn btn-func">DEL</button>
-        <button class="btn btn-red">AC</button>
+          <button class="btn btn-num">7</button>
+          <button class="btn btn-num">8</button>
+          <button class="btn btn-num">9</button>
+          <button class="btn btn-func">DEL</button>
+          <button class="btn btn-red">AC</button>
 
-        <button class="btn btn-num">4</button>
-        <button class="btn btn-num">5</button>
-        <button class="btn btn-num">6</button>
-        <button class="btn btn-op">×</button>
-        <button class="btn btn-op">÷</button>
+          <button class="btn btn-num">4</button>
+          <button class="btn btn-num">5</button>
+          <button class="btn btn-num">6</button>
+          <button class="btn btn-op">×</button>
+          <button class="btn btn-op">÷</button>
 
-        <button class="btn btn-num">1</button>
-        <button class="btn btn-num">2</button>
-        <button class="btn btn-num">3</button>
-        <button class="btn btn-op">+</button>
-        <button class="btn btn-op">-</button>
+          <button class="btn btn-num">1</button>
+          <button class="btn btn-num">2</button>
+          <button class="btn btn-num">3</button>
+          <button class="btn btn-op">+</button>
+          <button class="btn btn-op">-</button>
 
-        <button class="btn btn-num">0</button>
-        <button class="btn btn-num">.</button>
-        <button class="btn btn-func">Ans</button>
-        <button class="btn btn-func">EXP</button>
-        <button class="btn btn-blue">=</button>
-      </section>
-    </main>
+          <button class="btn btn-num">0</button>
+          <button class="btn btn-num">.</button>
+          <button class="btn btn-func">Ans</button>
+          <button class="btn btn-func">EXP</button>
+          <button class="btn btn-blue">=</button>
+        </section>
+      </main>
+
+      <aside class="history-panel">
+        <header class="history-header">
+          <span class="history-title">History</span>
+        </header>
+        <ul class="history-list" id="history-list"></ul>
+      </aside>
+    </section>
 
     <script src="/dist/main.js" type="module"></script>
   </body>
