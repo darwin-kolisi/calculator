@@ -8,6 +8,7 @@
 
 body {
   display: flex;
+  background-color: #141414;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -19,7 +20,7 @@ body {
   flex-direction: row;
   background-color: #000000;
   border-radius: 12px;
-  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5); */
   overflow: hidden;
   width: 95%;
   max-width: 950px;
