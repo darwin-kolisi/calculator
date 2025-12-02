@@ -28,37 +28,37 @@ function processToken(token: string): number {
 
   const sqrtMatch = token.match(/sqrt\(([^)]+)\)/);
   if (sqrtMatch) {
-    const inner = calculate(sqrtMatch[1]);
+    const inner = calculate(sqrtMatch[1]!);
     return Math.sqrt(parseFloat(inner));
   }
 
   const sinMatch = token.match(/sin\(([^)]+)\)/);
   if (sinMatch) {
-    const inner = calculate(sinMatch[1]);
+    const inner = calculate(sinMatch[1]!);
     return Math.sin(toRadians(parseFloat(inner)));
   }
 
   const cosMatch = token.match(/cos\(([^)]+)\)/);
   if (cosMatch) {
-    const inner = calculate(cosMatch[1]);
+    const inner = calculate(cosMatch[1]!);
     return Math.cos(toRadians(parseFloat(inner)));
   }
 
   const tanMatch = token.match(/tan\(([^)]+)\)/);
   if (tanMatch) {
-    const inner = calculate(tanMatch[1]);
+    const inner = calculate(tanMatch[1]!);
     return Math.tan(toRadians(parseFloat(inner)));
   }
 
   const logMatch = token.match(/log\(([^)]+)\)/);
   if (logMatch) {
-    const inner = calculate(logMatch[1]);
+    const inner = calculate(logMatch[1]!);
     return Math.log10(parseFloat(inner));
   }
 
   const lnMatch = token.match(/ln\(([^)]+)\)/);
   if (lnMatch) {
-    const inner = calculate(lnMatch[1]);
+    const inner = calculate(lnMatch[1]!);
     return Math.log(parseFloat(inner));
   }
 
@@ -67,7 +67,7 @@ function processToken(token: string): number {
 
 function calculate(expr: string): string {
   const parts = expr.split(/([+\-×÷^])/);
-  let result = processToken(parts[0]);
+  let result = processToken(parts[0]!);
 
   const operate = (a: number, operator: string, b: number) => {
     switch (operator) {
@@ -88,9 +88,9 @@ function calculate(expr: string): string {
 
   for (let i = 1; i < parts.length; i += 2) {
     const op = parts[i];
-    const next = processToken(parts[i + 1]);
+    const next = processToken(parts[i + 1]!);
     if (isNaN(next)) return 'Error';
-    result = operate(result, op, next);
+    result = operate(result, op!, next);
   }
 
   return result.toString();
